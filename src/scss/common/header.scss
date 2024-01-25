@@ -1,0 +1,137 @@
+.header {
+    // .header__container
+
+    &__container {
+    }
+
+    // .header__body
+
+    &__body {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 16px 0;
+
+        @media (max-width: 1024px) {
+            flex-wrap: wrap;
+        }
+    }
+
+    // .header__logo
+
+    &__logo {
+        flex: 0 0 auto;
+        width: 20%;
+
+        border-radius: 23px;
+        border: 1px solid $gray-e6;
+        padding: 19px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1024px) {
+            width: calc(50% - 5px);
+        }
+    }
+
+    // .header__bonus
+
+    &__bonus {
+        flex: 0 0 auto;
+        width: 21.272%;
+
+        border-radius: 23px;
+        border: 1px dashed $gray-e6;
+        padding: 5px;
+
+        font-weight: 700;
+        line-height: 105.8%;
+        letter-spacing: -0.03em;
+        text-transform: uppercase;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            order: 10;
+
+            br {
+                display: none;
+            }
+        }
+
+        div {
+            width: 100%;
+            height: 100%;
+            padding: 19px 30px;
+
+            border-radius: 20px;
+            background: $gray-f5;
+        }
+
+        span {
+            color: $accent;
+        }
+    }
+
+    // .header__promocode
+
+    &__promocode {
+        flex: 0 0 auto;
+        width: 36.441%;
+
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        border-radius: 23px;
+        border: 1px dashed $gray-e6;
+        padding: 4px;
+
+        @media (max-width: 1024px) {
+            width: 100%;
+            order: 11;
+        }
+
+        // .header__promocode-body
+
+        &-body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            width: 100%;
+            height: 100%;
+            padding: 6px;
+            gap: 20px;
+
+            border-radius: 20px;
+            background: $gray-f5;
+        }
+
+        // .header__promocode-img
+
+        &-img {
+            width: 61px;
+            height: 61px;
+            flex: 0 0 auto;
+        }
+
+        // .header__promocode-text
+
+        &-text {
+        }
+    }
+
+    // .header__donwload
+
+    &__donwload {
+        flex: 0 0 auto;
+        width: 19.75%;
+
+        @media (max-width: 1024px) {
+            width: calc(50% - 5px);
+        }
+    }
+}
