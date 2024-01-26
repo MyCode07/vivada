@@ -1,0 +1,48 @@
+.main {
+    margin-top: 150px;
+
+    @media (max-width: 768px) {
+        margin-top: 100px;
+    }
+
+    // .main__container
+
+    &__container {
+    }
+
+    // .main__body
+
+    &__body {
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: 768px) {
+            display: block;
+        }
+    }
+
+    // .main__sidebar
+
+    &__sidebar {
+        flex: 0 0 auto;
+        width: 280px;
+
+        border: 1px solid;
+
+        height: 100px;
+
+        @media (max-width: 768px) {
+            width: 100%;
+            display: none;
+        }
+    }
+
+    // .main__content
+
+    &__content {
+        flex: 1 1 auto;
+        border: 1px solid;
+
+        height: 400px;
+    }
+}

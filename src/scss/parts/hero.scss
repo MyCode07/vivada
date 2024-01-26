@@ -1,4 +1,6 @@
 .hero {
+    margin-bottom: 20px;
+    
     // .hero__container
 
     &__container {
@@ -37,6 +39,10 @@
 
         background-size: cover;
         background-position: right;
+        background-repeat: no-repeat;
+
+        @media (max-width: 768px) {
+        }
     }
 
     h1,
@@ -81,11 +87,20 @@
             border: 1px solid rgba($color: $white, $alpha: 0.2);
 
             padding: 18px 20px;
+            min-width: 117px;
+
+            @media (max-width: 768px) {
+                min-width: 77px;
+                padding: 18px 12px;
+            }
 
             span {
-                font-size: 24px;
                 font-weight: 500;
                 line-height: 105.8%;
+
+                @media (max-width: 768px) {
+                    font-size: 20px;
+                }
 
                 svg,
                 img {
@@ -100,6 +115,10 @@
                 font-weight: 500;
                 line-height: 105.8%;
                 opacity: 0.5;
+
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
             }
         }
     }
@@ -116,6 +135,11 @@
                 &:hover {
                     background-color: #ffb6c9;
                 }
+            }
+
+            @media (max-width: 768px) {
+                width: 100%;
+                margin-top: 25px;
             }
         }
     }

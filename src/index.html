@@ -5,10 +5,22 @@
 @@include('./html/header.html')
 
 <main>
+    <style>
+        .hero__back {
+            background-image: url('img/hero-back.png');
+        }
+
+        @media (max-width:768px) {
+            .hero__back {
+                background-image: url('img/hero-back-vertical.png');
+            }
+        }
+    </style>
+
     <section class="hero">
         <div class="hero__container _container">
             <div class="hero__body">
-                <div class="hero__back" style="background-image: url('img/hero-back.png');"></div>
+                <div class="hero__back"></div>
                 <div class="hero__left">
                     <h1>Скачать VAVADA (мобильное приложение)</h1>
                     <p>Moracon Ltd.</p>
@@ -43,6 +55,48 @@
                         <img src="img/hero-img.png" alt="">
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery-slider">
+        <div class="gallery-slider__container _container">
+            <div class="gallery-slider__body">
+                <button class="slider-arrow _prev">
+                    <svg width="16" height="14" viewBox="0 0 16 14">
+                        <use xlink:href='img/svg/icons.svg#slider-arrow' />
+                    </svg>
+                </button>
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="img/slide-1.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="img/slide-1.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="img/slide-1.png" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                            <img loading="lazy" src="img/slide-1.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-arrow _next">
+                    <svg width="16" height="14" viewBox="0 0 16 14">
+                        <use xlink:href='img/svg/icons.svg#slider-arrow' />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <section class="main">
+        <div class="main__container _container">
+            <div class="main__body">
+                <div class="main__sidebar"></div>
+                <div class="main__content"></div>
             </div>
         </div>
     </section>
