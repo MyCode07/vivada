@@ -15,6 +15,7 @@
 
         @media (max-width: 1024px) {
             flex-wrap: wrap;
+            font-size: 14px;
         }
     }
 
@@ -33,7 +34,13 @@
         justify-content: center;
 
         @media (max-width: 1024px) {
-            width: calc(50% - 5px);
+            width: calc(48% - 5px);
+            padding: 15px 19px;
+        }
+
+        img,
+        svg {
+            max-width: 200px;
         }
     }
 
@@ -68,6 +75,10 @@
 
             border-radius: 20px;
             background: $gray-f5;
+
+            @media (max-width: 1024px) {
+                padding: 14px 19px;
+            }
         }
 
         span {
@@ -92,6 +103,7 @@
         @media (max-width: 1024px) {
             width: 100%;
             order: 11;
+            padding: 5px;
         }
 
         // .header__promocode-body
@@ -99,7 +111,6 @@
         &-body {
             display: flex;
             align-items: center;
-            justify-content: center;
 
             width: 100%;
             height: 100%;
@@ -108,6 +119,10 @@
 
             border-radius: 20px;
             background: $gray-f5;
+
+            @media (max-width: 1024px) {
+                padding: 14px 19px;
+            }
         }
 
         // .header__promocode-img
@@ -116,11 +131,34 @@
             width: 61px;
             height: 61px;
             flex: 0 0 auto;
+
+            @media (max-width: 1024px) {
+                display: none;
+            }
         }
 
         // .header__promocode-text
 
         &-text {
+            b {
+                text-transform: uppercase;
+            }
+
+            span {
+                color: $accent;
+            }
+
+            label {
+                opacity: 0.5;
+            }
+
+            i {
+                font-style: normal;
+                
+                @media (max-width: 768px) {
+                    font-size: 12px;
+                }
+            }
         }
     }
 
@@ -129,9 +167,21 @@
     &__donwload {
         flex: 0 0 auto;
         width: 19.75%;
+        height: auto;
 
         @media (max-width: 1024px) {
-            width: calc(50% - 5px);
+            width: calc(52% - 5px);
+        }
+
+        @media (max-width: 768px) {
+            font-size: 12px;
+            gap: 12px;
+
+            img,
+            svg {
+                width: 12px;
+                height: 12px;
+            }
         }
     }
 }
