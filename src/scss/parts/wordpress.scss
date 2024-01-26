@@ -3,7 +3,7 @@
 }
 
 .wp-block-columns {
-    margin-bottom: 120px;
+    margin-bottom: 150px;
     display: flex;
     justify-content: space-between;
 
@@ -27,47 +27,6 @@
         }
     }
 
-    &._border {
-        border-radius: 20px;
-        border: 1px solid #e3e3e3;
-        padding: 30px;
-
-        width: calc(100% - 50px);
-
-        h3,
-        h4,
-        h5,
-        h6 {
-            margin-bottom: 10px;
-        }
-    }
-
-    &._attention {
-        position: relative;
-        margin-top: 60px;
-
-        &:before {
-            position: absolute;
-            top: -10px;
-            transform: translate(-50%, -100%);
-            left: 50%;
-
-            content: "!";
-            display: block;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: #ca0000;
-            font-size: 26px;
-            border: 1px solid #e3e3e3;
-            border-radius: 15px;
-            margin-inline: auto;
-        }
-    }
-
     &.wrap-992 {
         @media (max-width: 992px) {
             flex-direction: column;
@@ -87,36 +46,6 @@
 
         &:not(:first-child) {
             @include adaptive-value("margin-top", 50, 30, 1);
-        }
-
-        &._border {
-            h3,
-            h4,
-            h5,
-            h6 {
-                margin-bottom: 10px;
-            }
-
-            padding-inline: 30px;
-        }
-
-        &._line {
-            border-top: 1px solid #e3e3e3;
-            padding-top: 20px;
-            padding-bottom: 20px;
-            margin-top: 0;
-
-            &:last-of-type {
-                border-bottom: 1px solid #e3e3e3;
-                padding-bottom: 20px;
-            }
-
-            h3,
-            h4,
-            h5,
-            h6 {
-                margin-bottom: 10px;
-            }
         }
 
         &._wrap {
@@ -145,20 +74,69 @@
             }
         }
 
+        &._wrap-3 {
+            flex-wrap: wrap !important;
+            justify-content: flex-start;
+            gap: 40px 20px;
+
+            @media (max-width: 768px) {
+                gap: 0;
+            }
+
+            .wp-block-column {
+                width: calc(100% / 3 - 2 / 3 * 20px);
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+        }
+
         &._numeric {
             counter-reset: count;
+            gap: 40px 20px !important;
+
+            @media (max-width: 768px) {
+                gap: 40px !important;
+            }
 
             .wp-block-column {
                 counter-increment: count;
+                position: relative;
+                min-height: 140px;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 20px;
+                padding: 20px;
+                border: 1px dashed rgba($color: $black, $alpha: 0.2);
+
+                @media (max-width: 768px) {
+                    margin-bottom: 0 !important;
+                }
+
+                p {
+                    font-size: 16px;
+                    text-align: center;
+                }
 
                 &:before {
                     content: counter(count);
 
-                    border: 1px solid #ccc;
-                    margin-bottom: 13px;
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    z-index: 1;
 
-                    color: #06f;
-                    font-size: 30px;
+                    background-color: $white;
+
+                    color: $accent;
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: 700;
+
                     display: block;
                     width: 50px;
                     height: 50px;
@@ -206,14 +184,6 @@
         }
 
         & > p {
-            padding-top: 20px;
-            border-top: 1px solid #dbdbdb;
-
-            &._noborder {
-                padding-top: 0;
-                border-top: 0;
-            }
-
             &:not(:last-child) {
                 margin-bottom: 15px;
             }
@@ -223,17 +193,8 @@
             }
 
             a {
-                color: #0066ff;
+                color: $accent;
                 display: inline;
-            }
-
-            &._italic {
-            }
-
-            &._center {
-                max-width: 560px;
-                margin-right: auto;
-                margin-left: auto;
             }
         }
     }
@@ -266,8 +227,6 @@
             }
 
             img {
-                margin-bottom: 0 !important;
-                margin-right: 0 !important;
             }
 
             figcaption {
@@ -363,10 +322,6 @@
         gap: 10px;
 
         li {
-            border: 1px solid #ccc;
-            padding: 11px 15px;
-            height: fit-content;
-
             a {
                 display: inline-block;
             }
@@ -463,30 +418,8 @@
         }
     }
 
-    nav {
-        & > :not(:last-child) {
-        }
-
-        ul {
-            & > :not(:last-child) {
-            }
-
-            & > :first-child {
-            }
-
-            li {
-                &:before {
-                }
-
-                a {
-                }
-            }
-        }
-    }
-
     ._btn,
     ._more {
-        margin-top: 20px;
     }
 }
 

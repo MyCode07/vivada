@@ -27,10 +27,6 @@
         flex: 0 0 auto;
         width: 280px;
 
-        border: 1px solid;
-
-        height: 100px;
-
         @media (max-width: 768px) {
             width: 100%;
             display: none;
@@ -41,8 +37,60 @@
 
     &__content {
         flex: 1 1 auto;
-        border: 1px solid;
 
-        height: 400px;
+        & > :last-child {
+            margin-bottom: 0;
+        }
+
+        &:has(.wp-block-columns) {
+            @media (max-width: $containerWithPadding + px) {
+                margin-inline: -$padding + px;
+            }
+        }
+    }
+}
+
+.data-list {
+    margin-top: 45px;
+
+    @media (max-width: 768px) {
+        margin-top: 30px;
+    }
+
+    display: flex;
+    gap: 18px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    // .data-list__col
+
+    &__col {
+        & > :not(:last-child) {
+            margin-bottom: 15px;
+        }
+    }
+
+    // .data-list__row
+
+    &__row {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+
+        color: rgba($color: $black, $alpha: 0.7);
+
+        padding-top: 15px;
+        border-top: 1px solid $gray-e6;
+
+        font-size: 14px;
+        letter-spacing: -0.02em;
+
+        & > :last-child {
+            text-align: right;
+            max-width: 70%;
+        }
     }
 }
