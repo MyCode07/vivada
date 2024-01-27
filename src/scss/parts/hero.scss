@@ -1,6 +1,6 @@
 .hero {
     margin-bottom: 20px;
-    
+
     // .hero__container
 
     &__container {
@@ -138,7 +138,7 @@
             }
 
             @media (max-width: 768px) {
-                width: 100%;
+                max-width: none;
                 margin-top: 25px;
             }
         }

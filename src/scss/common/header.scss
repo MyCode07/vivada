@@ -1,4 +1,22 @@
 .header {
+    &._sticky {
+        @media (min-width: 1025px) {
+            position: sticky;
+            top: 0;
+
+            transition:
+                background-color 0.3s ease 0s,
+                backdrop-filter 0.3s ease 0s;
+
+            background-color: rgba($color: $white, $alpha: 0.6);
+            backdrop-filter: blur(6.900000095367432px);
+
+            .header__body {
+                padding: 30px 0;
+            }
+        }
+    }
+
     // .header__container
 
     &__container {
@@ -12,6 +30,8 @@
         justify-content: space-between;
         gap: 10px;
         padding: 16px 0;
+
+        transition: padding 0.3s ease 0s;
 
         @media (max-width: 1024px) {
             flex-wrap: wrap;
@@ -154,7 +174,7 @@
 
             i {
                 font-style: normal;
-                
+
                 @media (max-width: 768px) {
                     font-size: 12px;
                 }
@@ -171,6 +191,7 @@
 
         @media (max-width: 1024px) {
             width: calc(52% - 5px);
+            max-width: none;
         }
 
         @media (max-width: 768px) {

@@ -21,24 +21,10 @@
         margin-bottom: 100px;
 
         flex-direction: column;
-
-        & > :not(:last-child) {
-            margin-bottom: 25px;
-        }
-    }
-
-    &.wrap-992 {
-        @media (max-width: 992px) {
-            flex-direction: column;
-
-            & > :not(:last-child) {
-                margin-bottom: 25px;
-            }
-        }
     }
 
     .wp-block-columns {
-        margin-bottom: 0;
+        margin-bottom: 30px;
         padding-inline: 0;
         width: 100%;
 
@@ -50,20 +36,16 @@
 
         &._wrap {
             flex-wrap: wrap !important;
+            gap: 40px 20px !important;
 
-            & > :not(:last-child) {
-                margin-bottom: 40px;
+            @media (max-width: 768px) {
+                gap: 40px !important;
             }
         }
 
         &._wrap-4 {
             flex-wrap: wrap !important;
             justify-content: flex-start;
-            gap: 40px 20px;
-
-            @media (max-width: 768px) {
-                gap: 0;
-            }
 
             .wp-block-column {
                 width: calc(25% - 15px);
@@ -77,11 +59,6 @@
         &._wrap-3 {
             flex-wrap: wrap !important;
             justify-content: flex-start;
-            gap: 40px 20px;
-
-            @media (max-width: 768px) {
-                gap: 0;
-            }
 
             .wp-block-column {
                 width: calc(100% / 3 - 2 / 3 * 20px);
@@ -92,13 +69,16 @@
             }
         }
 
-        &._numeric {
-            counter-reset: count;
-            gap: 40px 20px !important;
+        &._links {
+            gap: 15px 20px !important;
 
             @media (max-width: 768px) {
-                gap: 40px !important;
+                gap: 10px !important;
             }
+        }
+
+        &._numeric {
+            counter-reset: count;
 
             .wp-block-column {
                 counter-increment: count;
@@ -114,11 +94,6 @@
 
                 @media (max-width: 768px) {
                     margin-bottom: 0 !important;
-                }
-
-                p {
-                    font-size: 16px;
-                    text-align: center;
                 }
 
                 &:before {
@@ -208,6 +183,7 @@
     figure {
         &:not(.wp-block-table) {
             margin-top: 30px;
+            margin-bottom: 30px;
         }
 
         &:first-child {
@@ -217,6 +193,11 @@
 
         &:last-child {
             margin-bottom: 0;
+        }
+
+        img,
+        picture {
+            width: 100%;
         }
 
         &._flex {
@@ -250,46 +231,38 @@
 
     figcaption {
         margin-top: 16px;
-        color: #969696;
+        opacity: 0.7;
         font-size: 16px;
         font-style: italic;
         margin-bottom: 0;
     }
 
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-    }
-
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-    }
-
     blockquote {
+        margin-bottom: 30px;
+
         p {
-            font-style: italic;
-            display: flex;
+            position: relative;
+            padding: 0 35px;
+
+            &:before,
+            &:after {
+                height: 20px;
+                width: 20px;
+                flex: 0 0 auto;
+                font-size: 30px;
+                position: absolute;
+            }
 
             &:before {
                 content: "“";
-                font-size: 30px;
-                margin-right: 12px;
-                height: 10px;
+                top: 0;
+                left: 0;
             }
 
             &:after {
                 content: "”";
-                font-size: 30px;
-                height: 10px;
-                margin-left: 12px;
-                align-self: flex-end;
+                right: 0;
+                bottom: 0;
             }
         }
 
@@ -297,6 +270,7 @@
         figure {
             display: flex;
             align-items: center;
+            margin-top: 20px !important;
 
             span,
             p,
@@ -304,7 +278,6 @@
                 margin-left: 11px;
                 margin-top: 0;
                 font-style: normal;
-                color: #3a3a3a;
             }
 
             img {
@@ -315,11 +288,13 @@
         }
     }
 
-    ul {
+    ul,
+    ol {
         margin-top: 30px;
+        margin-bottom: 30px;
         display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+        flex-direction: column;
+        gap: 15px 20px;
 
         li {
             a {
@@ -327,44 +302,59 @@
             }
         }
 
-        &._2columns {
-            justify-content: space-between;
+        &._wrap {
+            flex-direction: row;
+            flex-wrap: wrap;
 
-            &:first-child {
-                margin-top: 0;
-            }
-
-            @media (max-width: 600px) {
+            @media (max-width: 768px) {
                 flex-direction: column;
             }
 
             li {
-                width: calc(50% - 5px);
-                justify-content: flex-start;
-                text-align: left;
+                flex: 1 1 auto;
+            }
+        }
 
-                @media (max-width: 600px) {
+        &._wrap-2 {
+            li {
+                width: calc(50% - 20px);
+
+                @media (max-width: 768px) {
+                    width: 100%;
+                }
+            }
+        }
+
+        &._wrap-3 {
+            li {
+                width: calc(100% / 3 - 2 / 3 * 20px);
+
+                @media (max-width: 768px) {
                     width: 100%;
                 }
             }
         }
     }
 
-    ol {
-        counter-reset: num;
-        margin-top: 30px;
-
-        & > :not(:last-child) {
-            margin-bottom: 15px;
-        }
-
-        @media (max-width: 768px) {
-            margin-top: 25px;
-
-            & > :not(:last-child) {
-                margin-bottom: 10px;
+    ul {
+        li {
+            &:before {
+                display: inline-block;
+                content: "";
+                width: 7px;
+                height: 7px;
+                border-radius: 50%;
+                flex: 0 0 auto;
+                background-color: currentColor;
+                margin-right: 10px;
             }
         }
+    }
+
+    ol {
+        color: rgba($color: $black, $alpha: 0.7);
+
+        counter-reset: num;
 
         li {
             counter-increment: num;

@@ -1,59 +1,55 @@
 .form {
-    // .form__rows
+    // .form__row
 
-    &__rows {
-        // .form__rows-item
+    &__row {
+        display: flex;
+        margin-bottom: 30px;
+        gap: 23px;
 
-        &-item {
-        }
-
-        // .form__rows-content
-
-        &-content {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            align-items: flex-end;
-            gap: 15px;
-
-            @media (max-width: 768px) {
-                display: block;
-                gap: 20px 10px;
-            }
-
-            & > :not(:last-child) {
-                @media (max-width: 768px) {
-                    margin-bottom: 10px;
-                }
-            }
+        @media (max-width: 768px) {
+            flex-direction: column;
+            gap: 30px;
         }
     }
 
-    // .form__input
+    // .form__item
 
-    &__input {
-        @media (max-width: 768px) {
+    &__item {
+        width: 100%;
+
+        &:not(:only-child) {
+            @media (min-width: 769px) {
+                width: 50%;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 15px;
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 105.8%;
+        }
+
+        input,
+        textarea {
+            display: block;
             width: 100%;
+            padding: 20px 25px;
+            border: 1px solid rgba($color: $black, $alpha: 0.2);
         }
 
         input {
-            background-color: #fff;
-            box-shadow: 0px 0px 42px 0px rgba(0, 0, 0, 0.06);
+            border-radius: 50px;
+        }
 
-            font-family: Namu1960;
-            letter-spacing: -0.04em;
-
-            padding: 14px 19px 14px 19px;
-            width: 100%;
-            font-size: 18px;
-            height: 54px;
-            color: inherit;
-
-            &::placeholder {
-                color: #cccccc;
-            }
+        textarea {
+            border-radius: 20px;
+            resize: none;
+            height: 94px;
 
             @media (max-width: 768px) {
-                max-width: none;
+                height: 140px;
             }
         }
     }
@@ -61,39 +57,73 @@
     // .form__button
 
     &__button {
-        position: relative;
-        margin-top: 0 !important;
-
         @media (max-width: 768px) {
-            max-width: none;
-            margin-top: 30px !important;
+            width: 100%;
+        }
+
+        ._btn {
+            @media (max-width: 768px) {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.rating-form__ratings {
+    display: flex;
+    gap: 3px;
+    padding: 3px;
+
+    width: 100%;
+    border-radius: 50px;
+    border: 1px solid rgba($color: $black, $alpha: 0.2);
+
+    // .rating-form__ratings-item
+
+    &-item {
+        flex: 1 1 auto;
+
+        border-radius: 50px;
+        border: 1px solid rgba($color: $black, $alpha: 0.2);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1px;
+        height: 56px;
+        padding: 10px;
+
+        color: rgba($color: $black, $alpha: 0.6);
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 105.8%;
+        position: relative;
+
+        transition: all 0.3s ease 0s;
+
+        &:has(input:checked) {
+            border-color: $accent;
+        }
+
+        img,
+        svg {
+            width: 17px;
+            fill: #ffbe41;
+            flex: 0 0 auto;
+        }
+
+        img,
+        svg,
+        span {
+            pointer-events: none;
         }
 
         input {
-            width: 100%;
-            cursor: pointer;
-            height: 54px;
-            color: #fff;
-            position: relative;
-            display: block;
+            position: absolute;
+            inset: 0;
+            z-index: 2;
             opacity: 0;
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-
-            @media (max-width: 768px) {
-                max-width: none;
-            }
-        }
-
-        .wpcf7-spinner {
-            position: absolute;
-            bottom: 0;
-            transform: translate(-50%, 28px);
-            left: 50%;
-            margin: 0;
+            cursor: pointer;
         }
     }
 }

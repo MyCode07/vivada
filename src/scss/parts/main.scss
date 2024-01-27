@@ -16,7 +16,7 @@
         display: flex;
         gap: 20px;
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             display: block;
         }
     }
@@ -45,6 +45,42 @@
         &:has(.wp-block-columns) {
             @media (max-width: $containerWithPadding + px) {
                 margin-inline: -$padding + px;
+
+                .date {
+                    padding-inline: $padding + px;
+                }
+            }
+        }
+
+        .slider {
+            max-width: 880px;
+            margin-bottom: 30px;
+        }
+    }
+
+    .date {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 20px;
+
+        time {
+            border-radius: 100px;
+            padding: 11px 16px;
+
+            font-weight: 500;
+            letter-spacing: -0.02em;
+
+            border: 1px solid $gray-e6;
+        }
+
+        .upadte {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            time {
+                background-color: $gray-e6;
             }
         }
     }
@@ -91,6 +127,158 @@
         & > :last-child {
             text-align: right;
             max-width: 70%;
+        }
+    }
+}
+
+.rating-data {
+    display: flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 10px;
+    gap: 30px;
+    border: 1px solid rgba($color: $black, $alpha: 0.2);
+
+    margin-bottom: 35px;
+
+    @media (max-width: 768px) {
+        display: block;
+        padding-bottom: 30px;
+    }
+
+    // .rating-data__rating
+
+    &__rating {
+        border: 1px dashed rgba($color: $black, $alpha: 0.2);
+        border-radius: 20px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        padding-top: 60px;
+        padding-bottom: 50px;
+        padding-inline: 30px;
+        width: 100%;
+        max-width: 240px;
+
+        @media (max-width: 768px) {
+            max-width: none;
+            margin-bottom: 16px;
+            padding-top: 30px;
+            padding-bottom: 50px;
+        }
+
+        span {
+            font-size: 56px;
+            font-weight: 700;
+            line-height: 105.8%;
+            text-transform: uppercase;
+        }
+
+        .icon {
+            width: 94px;
+            margin-top: 5px;
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-size: 20px;
+            font-weight: 500;
+            opacity: 0.5;
+        }
+    }
+
+    // .rating-data__info
+
+    &__info {
+        flex: 1 1 auto;
+        padding-right: 37px;
+
+        @media (max-width: 768px) {
+            padding-right: 0;
+        }
+
+        & > :not(:last-child) {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+
+            span {
+                flex: 0 0 auto;
+                width: 12px;
+
+                color: rgba($color: $black, $alpha: 0.2);
+                font-size: 20px;
+                font-weight: 500;
+            }
+
+            i {
+                display: block;
+                width: calc(100% - 12px - 14px);
+                height: 12px;
+                border-radius: 100px;
+
+                background-color: $gray-d9;
+                position: relative;
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    left: 0;
+                    top: 0;
+                    width: 100%;
+                    height: 100%;
+                    border-radius: inherit;
+                    background-color: $accent;
+                    opacity: 0.5;
+
+                    max-width: var(--width);
+                }
+            }
+        }
+    }
+}
+
+.rating-form {
+    margin-bottom: 60px;
+}
+
+.navigation {
+    margin-top: 30px;
+
+    label {
+        display: block;
+        margin-bottom: 20px;
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 105.8%;
+    }
+
+    ul {
+        & > :not(:last-child) {
+            margin-bottom: 20px;
+        }
+
+        a {
+            display: block;
+            border-top: 1px solid $gray-e6;
+            padding-top: 15px;
+
+            font-weight: 500;
+
+            color: rgba($color: $black, $alpha: 0.7);
+            transition: color 0.3s ease 0s;
+
+            &:hover {
+                color: $accent;
+            }
         }
     }
 }
