@@ -1,4 +1,6 @@
 .header {
+    z-index: 16;
+
     &._sticky {
         @media (min-width: 1025px) {
             position: sticky;
@@ -197,6 +199,8 @@
         @media (max-width: 768px) {
             font-size: 12px;
             gap: 12px;
+
+            padding: 20px;
 
             img,
             svg {

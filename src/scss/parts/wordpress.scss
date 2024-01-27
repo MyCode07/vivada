@@ -24,7 +24,7 @@
     }
 
     .wp-block-columns {
-        margin-bottom: 30px;
+        margin-bottom: 0;
         padding-inline: 0;
         width: 100%;
 
@@ -32,6 +32,10 @@
 
         &:not(:first-child) {
             @include adaptive-value("margin-top", 50, 30, 1);
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
         }
 
         &._wrap {
@@ -280,6 +284,10 @@
                 font-style: normal;
             }
 
+            picture {
+                width: fit-content;
+            }
+
             img {
                 width: 64px;
                 height: 64px;
@@ -347,6 +355,7 @@
                 flex: 0 0 auto;
                 background-color: currentColor;
                 margin-right: 10px;
+                margin-bottom: 2px;
             }
         }
     }

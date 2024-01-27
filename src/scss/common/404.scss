@@ -24,6 +24,12 @@
         margin-top: 30px;
         margin-left: auto;
         margin-right: auto;
+        text-align: center;
+        justify-content: center;
+
+        @media (min-width: 769px) {
+            width: fit-content;
+        }
     }
 
     img {

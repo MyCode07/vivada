@@ -124,7 +124,7 @@ svg {
     gap: 20px;
 
     color: $accent;
-    line-height: 105.8%;
+    line-height: 1;
     letter-spacing: -0.02em;
     text-transform: uppercase;
 
@@ -171,6 +171,24 @@ svg {
 
         @media (max-width: 1024px) {
             height: 63px;
+        }
+    }
+
+    // ._btn-link
+
+    &-link {
+        img,
+        svg {
+            transform: rotate(135deg);
+        }
+    }
+
+    // ._btn-more
+
+    &-more {
+        img,
+        svg {
+            transform: rotate(-90deg);
         }
     }
 }
