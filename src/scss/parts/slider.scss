@@ -97,13 +97,17 @@
             border-radius: 50%;
             background-color: $gray-d9;
             cursor: pointer;
-            
+
             transition: all 0.3s ease 0s;
 
             &.swiper-pagination-bullet-active {
                 background-color: $accent;
             }
         }
+    }
+
+    .swiper-button-lock{
+        display: none;
     }
 }
 
@@ -129,6 +133,41 @@
             padding: 5px;
             border-radius: 33px;
             border: 1px dashed $gray-e6;
+            overflow: hidden;
+            position: relative;
+            height: 209px;
+
+            a,
+            picture {
+                width: 100%;
+                display: block;
+                height: 100%;
+            }
+
+            img {
+                height: 100%;
+                object-fit: cover;
+            }
+
+            a {
+                @media (any-hover: hover) {
+                    &:hover {
+                        &:before {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                &:before {
+                    position: absolute;
+                    content: "";
+                    inset: 0;
+                    background-color: rgba($color: #000, $alpha: 0.2);
+                    opacity: 0;
+                    transition: opacity 0.3s ease 0s;
+                    pointer-events: none;
+                }
+            }
         }
     }
 }

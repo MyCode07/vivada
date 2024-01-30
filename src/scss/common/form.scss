@@ -52,6 +52,14 @@
                 height: 140px;
             }
         }
+
+        &._error {
+            input,
+            textarea,
+            .rating-form__ratings {
+                border-color: red;
+            }
+        }
     }
 
     // .form__button
@@ -69,6 +77,18 @@
     }
 }
 
+form._submitting {
+    pointer-events: none;
+
+    &:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        display: none;
+    }
+}
+
 .rating-form__ratings {
     display: flex;
     gap: 3px;
@@ -81,7 +101,12 @@
     // .rating-form__ratings-item
 
     &-item {
+        cursor: pointer;
         flex: 1 1 auto;
+
+        * {
+            pointer-events: none;
+        }
 
         border-radius: 50px;
         border: 1px solid rgba($color: $black, $alpha: 0.2);
@@ -101,7 +126,13 @@
 
         transition: all 0.3s ease 0s;
 
-        &:has(input:checked) {
+        @media (any-hover: hover) {
+            &:hover {
+                border-color: $accent;
+            }
+        }
+
+        &._active {
             border-color: $accent;
         }
 

@@ -104,6 +104,10 @@
     // .data-list__col
 
     &__col {
+        @media (min-width: 769px) {
+            flex: 1 1 auto;
+        }
+
         & > :not(:last-child) {
             margin-bottom: 15px;
         }
