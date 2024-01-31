@@ -1,0 +1,110 @@
+.popup {
+    position: fixed;
+    background-color: rgba(14, 14, 14, 0.6);
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 100px 0;
+    overflow-y: auto;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+    text-align: center;
+
+    transition: all 0.3s ease 0s;
+
+    &._open {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+
+        .form {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    // .popup__container
+
+    &__container {
+        max-width: 650px;
+    }
+
+    // .popup__close
+
+    &__close {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid $accent;
+        transition: all 0.3s ease 0s;
+
+        @media (max-width: 992px) {
+            width: 34px;
+            height: 34px;
+            top: 5px;
+            right: 5px;
+        }
+
+        svg {
+            flex: 0 0 auto;
+            pointer-events: none;
+            stroke: $accent;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                background-color: $accent;
+
+                svg {
+                    stroke: $white;
+                }
+            }
+        }
+    }
+
+    h2 {
+        margin-bottom: 1em;
+    }
+
+    p {
+        @include adaptive-value("font-size", 20, 16, 1);
+        margin-bottom: 1em;
+    }
+
+    ._btn {
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        justify-content: center;
+    }
+
+    // .popup__content
+
+    &__content {
+        background-color: $white;
+        padding: 60px 95px;
+        border-radius: 10px;
+        position: relative;
+
+        @media (max-width: 992px) {
+            padding: 30px 28px;
+            margin-top: 0px;
+            max-width: none;
+        }
+    }
+
+    &#error .popup__content {
+        color: $accent;
+    }
+}
