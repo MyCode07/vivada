@@ -16,7 +16,8 @@
         &-slide {
             picture,
             img {
-                height: 100%;
+                display: block;
+                width: 100%;
                 object-fit: cover;
                 border-radius: 30px;
             }
@@ -106,7 +107,7 @@
         }
     }
 
-    .swiper-button-lock{
+    .swiper-button-lock {
         display: none;
     }
 }

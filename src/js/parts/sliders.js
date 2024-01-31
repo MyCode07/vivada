@@ -1,5 +1,5 @@
 import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination} from 'swiper/modules';
 
 const sliders = document.querySelectorAll('.swiper');
 if (sliders.length) {
@@ -43,6 +43,7 @@ if (sliders.length) {
                 loop: true,
                 spaceBetween: 25,
                 slidesPerView: 1,
+                autoHeight:true,
                 navigation: {
                     prevEl: prev,
                     nextEl: next,
