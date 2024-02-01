@@ -94,7 +94,7 @@
                 justify-content: center;
                 border-radius: 20px;
                 padding: 20px;
-                border: 1px dashed rgba($color: $black, $alpha: 0.2);
+                border: 1px dashed color-opacity($black, 0.2);
 
                 @media (max-width: 768px) {
                     margin-bottom: 0 !important;
@@ -368,7 +368,7 @@
     }
 
     ol {
-        color: rgba($color: $black, $alpha: 0.7);
+        color: color-opacity($black, 0.72);
 
         counter-reset: num;
 

@@ -10,7 +10,7 @@
                 background-color 0.3s ease 0s,
                 backdrop-filter 0.3s ease 0s;
 
-            background-color: rgba($color: $white, $alpha: 0.6);
+            background-color: color-opacity($white, 0.6);
             backdrop-filter: blur(6.900000095367432px);
 
             .header__body {

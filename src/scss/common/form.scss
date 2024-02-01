@@ -36,7 +36,7 @@
             display: block;
             width: 100%;
             padding: 20px 25px;
-            border: 1px solid rgba($color: $black, $alpha: 0.2);
+            border: 1px solid color-opacity($black, 0.2);
         }
 
         input {
@@ -96,7 +96,7 @@ form._submitting {
 
     width: 100%;
     border-radius: 50px;
-    border: 1px solid rgba($color: $black, $alpha: 0.2);
+    border: 1px solid color-opacity($black, 0.2);
 
     // .rating-form__ratings-item
 
@@ -109,7 +109,7 @@ form._submitting {
         }
 
         border-radius: 50px;
-        border: 1px solid rgba($color: $black, $alpha: 0.2);
+        border: 1px solid color-opacity($black, 0.2);
 
         display: flex;
         align-items: center;
@@ -118,7 +118,7 @@ form._submitting {
         height: 56px;
         padding: 10px;
 
-        color: rgba($color: $black, $alpha: 0.6);
+        color: color-opacity($black, 0.6);
         font-size: 24px;
         font-weight: 500;
         line-height: 105.8%;

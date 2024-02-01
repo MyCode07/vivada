@@ -163,7 +163,7 @@
                     position: absolute;
                     content: "";
                     inset: 0;
-                    background-color: rgba($color: #000, $alpha: 0.2);
+                    background-color: color-opacity($black, 0.2);
                     opacity: 0;
                     transition: opacity 0.3s ease 0s;
                     pointer-events: none;

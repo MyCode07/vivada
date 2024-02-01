@@ -27,7 +27,7 @@
             height: 100%;
             left: 50%;
             transform: translate(-50%, 0);
-            background-color: rgba($color: $gray-d9, $alpha: 0.2);
+            background-color: color-opacity($gray-d9, 0.2);
             z-index: -1;
         }
 
@@ -54,7 +54,7 @@
             }
 
             a {
-                color: rgba($color: $black, $alpha: 0.7);
+                color: color-opacity($black, 0.7);
                 display: block;
                 padding-top: 15px;
                 border-top: 1px solid #d3d3d3;
@@ -77,7 +77,7 @@
         gap: 30px;
 
         * {
-            color: rgba($color: $white, $alpha: 0.5);
+            color: color-opacity($white, 0.5);
         }
 
         @media (max-width: 768px) {
