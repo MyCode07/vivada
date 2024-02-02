@@ -423,10 +423,6 @@
             margin-left: auto;
         }
     }
-
-    ._btn,
-    ._more {
-    }
 }
 
 @media (max-width: 781px) {
@@ -519,4 +515,8 @@
         max-height: 0;
         overflow: hidden;
     }
+}
+
+._hide:not(._active) {
+    display: none;
 }

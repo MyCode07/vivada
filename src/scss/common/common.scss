@@ -189,6 +189,14 @@ svg {
         img,
         svg {
             transform: rotate(-90deg);
+            transition: transform 0.3s ease 0s;
+        }
+
+        &._active {
+            img,
+            svg {
+                transform: rotate(90deg);
+            }
         }
     }
 }

@@ -8,6 +8,7 @@ import { toTop } from "./static/to-top.js";
 import "./parts/popup.js";
 import "./parts/sliders.js";
 import "./parts/radio.js";
+import "./parts/show-more.js";
 
 accordeon();
 maskInputs('+7 (999) 999-99-99', '._mask-phone')
