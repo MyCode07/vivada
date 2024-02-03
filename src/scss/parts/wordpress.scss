@@ -517,6 +517,17 @@
     }
 }
 
+.wp-block-columns._hide {
+    margin-top: 0;
+}
+
+.wp-block-columns .wp-block-columns:not(:last-child)._hide {
+    margin-top: 0;
+}
+.wp-block-columns .wp-block-columns:not(:first-child)._hide {
+    margin-top: 0;
+}
+
 ._hide:not(._active) {
     display: none;
 }
