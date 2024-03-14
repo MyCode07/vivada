@@ -216,3 +216,35 @@ svg {
     overflow: hidden;
     border-radius: 30px;
 }
+
+._copy-to-cb * {
+    pointer-events: none;
+}
+
+.clipboard-copy-msg {
+    position: fixed;
+    z-index: 28;
+    right: 30px;
+    top: 200px;
+    border-radius: 10px;
+    padding: 1em;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 1px rgba($color: $black, $alpha: 0.1);
+
+    transform: translate(100px, 0);
+    opacity: 0;
+    pointer-events: none;
+
+    transition: all 0.3s ease 0s;
+
+    @media (max-width: 1024px) {
+        right: 16px;
+        transform: translate(50px, 0);
+        font-size: 12px;
+    }
+
+    &._active {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

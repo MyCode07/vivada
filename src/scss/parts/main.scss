@@ -160,6 +160,7 @@
 
     &__col {
         @media (min-width: 769px) {
+            max-width: 33%;
             flex: 1 1 auto;
         }
 

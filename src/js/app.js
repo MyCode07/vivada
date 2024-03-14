@@ -4,6 +4,7 @@ import { accordeon } from "./static/accordeon.js";
 import { stickyHeader } from "./parts/header.js";
 import { Fancybox } from "@fancyapps/ui";
 import { toTop } from "./static/to-top.js";
+import { copyToClipboard } from "./parts/copy.js";
 
 import "./parts/popup.js";
 import "./parts/sliders.js";
@@ -15,6 +16,7 @@ maskInputs('+7 (999) 999-99-99', '._mask-phone')
 replaceDomElements();
 stickyHeader();
 toTop();
+copyToClipboard();
 
 
 Fancybox.bind("[data-fancybox]", {

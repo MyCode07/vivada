@@ -399,14 +399,16 @@
             }
 
             strong {
-                color: #ca0000;
-                font-family: Bebas Neue;
-                font-size: 25px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 1;
-                text-transform: uppercase;
-                margin-right: 7px;
+                &:not(.schema-how-to-step-name) {
+                    color: #ca0000;
+                    font-family: Bebas Neue;
+                    font-size: 25px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 1;
+                    text-transform: uppercase;
+                    margin-right: 7px;
+                }
             }
 
             a {
@@ -421,6 +423,12 @@
 
         @media (max-width: 768px) {
             margin-left: auto;
+        }
+    }
+
+    &:not(:has(._hide)) {
+        ._btn-more {
+            display: none;
         }
     }
 }
